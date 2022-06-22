@@ -14,28 +14,28 @@ class ProductController {
 
     @GetMapping
     fun getProducts(): BaseResponse<List<Product>> {
-        return BaseResponse(true, "data kost", productService.getAll())
+        return BaseResponse(true, "data product", productService.getAll())
     }
 
     @GetMapping("/{id}")
     fun getProductById(
         @PathVariable(value = "id") id: String
     ): BaseResponse<Product> {
-        return BaseResponse(true, "data kost by", productService.getById(id))
+        return BaseResponse(true, "data product by id", productService.getById(id))
     }
 
     @PostMapping
     fun addProduct(
         @RequestBody kost: Product
     ): BaseResponse<List<Product>> {
-        return BaseResponse(true, "add data kost", productService.add(kost))
+        return BaseResponse(true, "add data product", productService.add(kost))
     }
 
     @GetMapping("/search")
     fun searchProduct(
         @RequestParam(value = "name") name: String
     ): BaseResponse<List<Product>> {
-        return BaseResponse(true, "search data kost", productService.search(name))
+        return BaseResponse(true, "search data product", productService.search(name))
     }
 
     @PutMapping("/{id}")
@@ -43,13 +43,13 @@ class ProductController {
         @PathVariable id: String,
         @RequestBody kost: Product
     ): BaseResponse<Product> {
-        return BaseResponse(true, "update data kost", productService.update(id, kost))
+        return BaseResponse(true, "update data product", productService.update(id, kost))
     }
 
     @DeleteMapping("/{id}")
     fun deleteProduct(
         @PathVariable(value = "id") id: String
     ): BaseResponse<Product> {
-        return BaseResponse(true, "delete data kost", productService.delete(id))
+        return BaseResponse(true, "delete data product", productService.delete(id))
     }
 }
