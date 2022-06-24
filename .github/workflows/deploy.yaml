@@ -3,6 +3,8 @@ name: Heroku Product Deployment
 on:
   push:
     branches: [master]
+    paths-ignore:
+      - '**/README.md'
 
 jobs:
   build:
