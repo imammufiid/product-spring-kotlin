@@ -3,7 +3,7 @@
 ## Base url
 
 ```
-https://kost-mufid-api.herokuapp.com/v1
+https://product-mufid-api.herokuapp.com/v1
 ```
 
 ## Table endpoints
